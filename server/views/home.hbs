@@ -1,0 +1,32 @@
+<h1>Welcome to the Villain Page!</h1>
+
+
+<form action="/villains" method="POST">
+
+	<input type="text" placeholder="Name" 	name="name"/>
+	<input type="text" placeholder="Movie" 	name="movie"/>
+	<input type="text" placeholder="Super Power" name="power"/>
+	<input type="text" placeholder="Height" name="height"/>
+
+	<input type="submit" value="Submit!"/>
+
+</form>
+
+<br>
+
+<table border="1">
+	{{#each villainsArray}}
+	<tr data-id={{this.id}}>
+		<td><input type="text" value="{{this.name}}" 	class="name"	/></td>
+		<td><input type="text" value="{{this.movie}}" 	class="movie"	/></td>
+		<td><input type="text" value="{{this.power}}" 	class="power"	/></td>
+		<td><input type="text" value="{{this.height}}" 	class="height"	/></td>
+		<td><button class="edit">SAVE</button></td>
+		<td><button class="delete">DELETE</button></td>
+
+	</tr>
+	{{/each}}
+</table>
+
+
+<a href="/user/logout">LOGOUT</a>
